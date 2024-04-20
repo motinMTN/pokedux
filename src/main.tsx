@@ -5,12 +5,12 @@ import App from './App.tsx'
 import { pokemonsReducer } from './reducers/pokemons.tsx'
 import { Provider } from 'react-redux'
 import { applyMiddleware, compose, legacy_createStore as createStore } from 'redux'
-import { featuring, logger } from './middlewares/index.tsx';
+import { logger } from './middlewares/index.tsx';
 import './index.css'
 
 
 // import 'antd/dist/reset.css';
-const composedEnhancers = compose(composeWithDevTools(), applyMiddleware(logger,featuring));
+const composedEnhancers = compose(composeWithDevTools(), applyMiddleware(logger));
 
 const store = createStore(pokemonsReducer,composedEnhancers);
 
